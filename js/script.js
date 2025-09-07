@@ -50,3 +50,16 @@ window.addEventListener("scroll", () => {
 backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+
+// ---- load header and footer ----
+
+function loadHTML(id, url) {
+  fetch(url)
+    .then(resp => resp.text())
+    .then(data => document.getElementById(id).innerHTML = data);
+}
+
+loadHTML('header', '/japan_guide_website/partials/header.html');
+loadHTML('footer', '/japan_guide_website/partials/footer.html');
+
