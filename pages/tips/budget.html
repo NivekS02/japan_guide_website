@@ -160,36 +160,8 @@
   </p>
 </footer>
 
-    <!-- Script pour le menu hamburger sur mobile -->
-<script>
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
-
-// ouvre/ferme le menu principal
-menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('active');
-});
-
-// ouvre/ferme les sous-menus
-const deroulants = document.querySelectorAll('.deroulant > a');
-
-deroulants.forEach(link => {
-  link.addEventListener('click', (e) => {
-    const parentLi = link.parentElement;
-    
-    // Empêche le lien de naviguer
-    e.preventDefault();
-
-    // Ferme les autres sous-menus
-    deroulants.forEach(l => {
-      if(l !== link) l.parentElement.classList.remove('open');
-    });
-
-    // Ouvre ou ferme le sous-menu cliqué
-    parentLi.classList.toggle('open');
-  });
-});
-</script>
+<button id="backToTop" title="Remonter en haut">↑</button>
+<script src="../../js/script.js"></script>
 
 </body>
 </html>
