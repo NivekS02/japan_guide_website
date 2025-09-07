@@ -532,25 +532,26 @@ tbody tr:hover {
 }
 
 /* =============================Bouton "Retour en haut"============================= */
+  #backToTop {
+    opacity: 0; /* invisible par défaut */
+    visibility: hidden; /* évite les clics fantômes */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* fondu fluide */
+  }
 
-#backToTop {
-  display: none; /* caché par défaut */
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
-  padding: 12px;
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: opacity 0.3s;
-}
-
-#backToTop:hover {
-  background-color: #555;
-}
+  #backToTop.show {
+    opacity: 1;
+    visibility: visible;
+  }
