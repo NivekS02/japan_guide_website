@@ -56,10 +56,13 @@ backToTop.addEventListener("click", () => {
 
 function loadHTML(id, url) {
   fetch(url)
-    .then(resp => resp.text())
-    .then(data => document.getElementById(id).innerHTML = data);
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById(id).innerHTML = data;
+    })
+    .catch(err => console.error("Erreur chargement HTML :", err));
 }
 
+// Charger le header et le footer
 loadHTML('header', '/japan_guide_website/partials/header.html');
 loadHTML('footer', '/japan_guide_website/partials/footer.html');
-
