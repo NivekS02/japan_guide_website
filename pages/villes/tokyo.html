@@ -287,21 +287,19 @@
     <p class="alinea">Quoi ? Ah… le prix… j’ai payé 4080 yens pour toutes ces activités avec le plat et boisson compris, ce qui fait environ 25.5€, ça va roh, on n’a qu’une vie…</p>
     <p class="alinea">J’ai demandé à la maid de dessiner un chat sur mon omurice, réfléchissez bien avant de lui dire quoi dessiner…</p>
 
-
-
-
 <h2 id="kiddy-land">10. Kiddy land</h2>
-<div class="section inverse">
-  <img src="../../images/villes/tokyo/kiddy1.JPG" alt="Kiddy land" class="responsive-img img-medium">
-  <div class="texte">
-    <p class="alinea">C’est un magasin à Harajuku avec pleins de goodies tels que Ghibli, Rilakuma, Gudetama, Pokemon, Snoopy, etc. Je vous laisse le plan pour vous donner un aperçu de tout l’univers présent à Kiddy land.</p>
-  </div>
-</div>
-
 <div class="image-grid">
   <img src="../../images/villes/tokyo/kiddy2.jpg" alt="Kiddy land" class="responsive-img img-small">
   <img src="../../images/villes/tokyo/kiddy3.jpg" alt="Kiddy land" class="responsive-img img-small">
 </div>
+<div class="section inverse">
+  <div class="texte">
+    <p class="alinea">C’est un magasin à Harajuku avec pleins de goodies tels que Ghibli, Rilakuma, Gudetama, Pokemon, Snoopy, etc. Je vous laisse le plan pour vous donner un aperçu de tout l’univers présent à Kiddy land.</p>
+  </div>
+</div>
+  <img src="../../images/villes/tokyo/kiddy1.JPG" alt="Kiddy land" class="responsive-img img-medium">
+
+
 
 <h2 id="mugiwara">11. Mugiwara store</h2>
 <div class="section">
@@ -771,9 +769,10 @@
     <p class="alinea">Adresse : 2 Chome-29-1 Dogenzaka, Shibuya, Tokyo 150-0043, Japon</p>
   </div>
 </div>
-
-
 </main>
+
+<button id="backToTop" title="Remonter en haut">↑</button>
+
 
 <!-- Footer principal -->
 <footer class="footer-main">
@@ -865,6 +864,36 @@ deroulants.forEach(link => {
     parentLi.classList.toggle('open');
   });
 });
+</script>
+
+<script>
+  const backToTop = document.getElementById("backToTop");
+  let hideTimeout;
+
+  function showButton() {
+    // Afficher le bouton
+    backToTop.style.display = "block";
+
+    // Réinitialiser le timer
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => {
+      backToTop.style.display = "none";
+    }, 3000); // 3 secondes d'inactivité
+  }
+
+  // Quand on scroll
+  window.addEventListener("scroll", () => {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      showButton();
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  // Quand on clique -> remonter en haut
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 </script>
 
 </body>
