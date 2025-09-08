@@ -6,7 +6,7 @@ body {
 
 
 header {
-    background-color: #c62828; /* Rouge inspiré du drapeau japonais */
+    background-color: #c94646; /* Rouge inspiré du drapeau japonais */
 }
 
 header li {
@@ -34,7 +34,7 @@ main {
 
 /* Bandeau titre au-dessus du menu */
 .top-header {
-  background-color: #111;
+  background-color: #445469;
   color: #fff;
   text-align: center;
   padding: 8px 12px;
@@ -48,6 +48,14 @@ main {
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
+.top-header h1 {
+  font-size: 2.5rem;   /* taille du texte (2.5x la taille de base) */
+  color: #ffffff;      /* couleur blanche */
+  font-weight: bold;   /* rend le texte encore plus épais */
+  text-align: center;  /* centré horizontalement */
+  margin: 0;           /* supprime les marges par défaut */
+  padding: 10px 0;     /* ajoute un peu d’espace autour */
+}
 
 
 /* =============================footer============================= */
@@ -220,7 +228,6 @@ li {
     list-style:none; 
     display:flex; 
     justify-content:center; 
-    gap:8px; 
     margin:0; 
     padding:0; }
 
@@ -253,7 +260,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: #c62828;
+  background-color: #c94646;
   min-width: 150px;
   box-shadow: 0 8px 20px rgba(0,0,0,.2);
   position: absolute;
@@ -316,27 +323,68 @@ body > * {
 
 @media (max-width: 768px) {
   .menu-toggle {
-    display:block; margin:10px; padding:10px 14px; font-size:18px;
-    background:#333; color:#fff; border:0; border-radius:8px;
+    display:block; 
+    margin: auto; 
+    padding:10px 14px; 
+    font-size:18px;
+    background:#c94646; 
+    color:#fff; 
+    border:none; 
+    border-radius:8px;
+    cursor: pointer;
   }
 
   /* Menu caché par défaut, visible quand .active */
-  .menu { display:none; flex-direction:column; align-items:stretch; width:100%; }
+  .menu { 
+    display:none; 
+    flex-direction:column; 
+    align-items:stretch; 
+    width:100%; 
+  }
+
   .menu.active { display:flex; }
 
-  .menu > li { border-top:1px solid rgba(255,255,255,.12); }
-  .menu a, .submenu-toggle { text-align:left; padding:14px 16px; }
+  /* On retire la bordure du li */
+  .menu > li { 
+    border-top: none; 
+  }
+
+  .menu a, 
+  .submenu-toggle { 
+    display: block;
+    text-align:center; 
+    padding:14px 16px; 
+    border-top:1px solid rgba(255,255,255,.12);
+  }
 
   /* Sous-menus en colonne, dans le flux */
   .sous-menu {
-    position:relative; top:auto; left:auto; min-width:unset;
-    display:none; background:#2f2f2f; margin:0; padding:6px 0;
-    box-shadow:none; z-index:1;
+    position:relative; 
+    top:auto; 
+    left:auto; 
+    min-width:unset;
+    display:none; 
+    background:#a51d1d; 
+    margin:0; 
+    padding:0;
+    box-shadow:none; 
+    z-index:1;
   }
-  .deroulant.open > .sous-menu { display:block; }  /* OUVERT quand .open */
+  
+  .deroulant.open > .sous-menu { 
+    display:block; 
+  }  /* OUVERT quand .open */
 
   /* Petite indent visuelle des items de sous-menu */
-  .sous-menu li a { padding:12px 20px 12px 28px; }
+  .sous-menu li a { 
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.3); /* Ligne de séparation */
+    padding:12px 20px 12px 28px; 
+  }
+
+  .sous-menu li:last-child {
+  border-bottom: none; /* Pas de ligne après le dernier */
+}
 
   /* Le header reste au-dessus et à la largeur du viewport */
   header { position:relative; z-index:10; }
@@ -390,7 +438,7 @@ body > * {
 .btn {
     display: block;              /* un bouton par ligne */
     text-align: center;          /* texte centré */
-    background-color: #f04e30;   /* couleur de fond */
+    background-color: #c94646;   /* couleur de fond */
     color: white;                /* texte blanc */
     padding: 12px 20px;          /* espace autour du texte */
     margin: 10px auto;           /* espace entre les boutons */
@@ -402,7 +450,7 @@ body > * {
 }
 
 .btn:hover {
-    background-color: #c93a25;   /* couleur au survol */
+    background-color: #c94646;   /* couleur au survol */
 }
 
 
