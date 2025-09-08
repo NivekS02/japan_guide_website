@@ -318,9 +318,23 @@ body > * {
 
 /*=============================Styles pour les petits écrans, pour afficher la barre de navigation en mode vertical==============================*/
 
-/* ===== MOBILE ===== */
-.menu-toggle { display:none; } /* caché sur desktop */
+/* ===== PC ===== */
+.menu-toggle {
+  display: none;  /* caché par défaut */
+  width: 100%;          /* occupe toute la largeur */
+  max-width: 400px;     /* facultatif : limite si tu veux pas qu’il devienne énorme */
+  padding: 14px 0;      /* padding horizontal à 0 pour coller à la largeur */
+  font-size: 18px;
+  background: #c94646; 
+  color: #fff; 
+  border: none; 
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;   /* texte centré */
+  font-weight: bold;
+}
 
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .menu-toggle {
     display:block; 
@@ -364,7 +378,7 @@ body > * {
     left:auto; 
     min-width:unset;
     display:none; 
-    background:#a51d1d; 
+    background:#474eb9; 
     margin:0; 
     padding:0;
     box-shadow:none; 
