@@ -66,3 +66,28 @@ function loadHTML(id, url) {
 // Charger le header et le footer
 loadHTML('header', '/japan_guide_website/partials/header.html');
 loadHTML('footer', '/japan_guide_website/partials/footer.html');
+
+
+
+// ---- Popup de don avant téléchargement du guide ----
+
+document.getElementById("downloadBtn").addEventListener("click", function(e) {
+  e.preventDefault(); // empêche le téléchargement direct
+  document.getElementById("donationPopup").style.display = "flex";
+});
+
+// Bouton "Oui"
+document.getElementById("donateYes").addEventListener("click", function() {
+  // Redirection vers la page de don
+  window.open("https://streamelements.com/niveks02/tip", "_blank");
+  // Téléchargement du PDF ensuite
+  window.location.href = "../docs/Guide_Japon_v2.pdf";
+  document.getElementById("donationPopup").style.display = "none";
+});
+
+// Bouton "Non"
+document.getElementById("donateNo").addEventListener("click", function() {
+  // Téléchargement direct
+  window.location.href = "../docs/Guide_Japon_v2.pdf";
+  document.getElementById("donationPopup").style.display = "none";
+});
